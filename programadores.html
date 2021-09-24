@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programadores</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="css/programadores.css"/>
+    <link rel="stylesheet" href="css/cards.css">
+  </head>
+  <body>
+    <header class="header">
+    
+      <a class="link_logo" href="index.html"><!-- este va a index -->
+          
+        <img class="header__logo" src="img/logo.png" alt="Logotipo" />
+      </a>
+    </header>
+    <nav class="navbar navbar-expand-md navbar-light navegacion">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand navegacion__enlace" href="#">Navbar</a> -->
+          <button
+            class="navbar-toggler custom-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon custom-toggler"></span>
+          </button>
+          <div class="collapse navbar-collapse menu" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active navegacion__enlace"
+                  aria-current="page"
+                  href="index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link navegacion__enlace"
+                  href="contacto.html"
+                  style="color: #fff"
+                  >Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link navegacion__enlace"
+                  href="items.html"
+                  style="color: #fff"
+                  >Tienda</a
+                >
+              </li>
+              <!-- <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown link
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li> -->
+            </ul>
+            <!-- <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form> -->
+          </div>
+        </div>
+      </nav>
+    <!--******************************************-->
+<main>
+    <section class="tarjetas"></section>
+    <h1>Equipo de desarrollo</h1>
+    <h3 class="cta">Da click en las tarjetas y conócenos &nbsp;<i class="fa fa-arrow-down" aria-hidden="true"></i></h3>
+    
+    <div class="contacto-tarjetas grid1">
+        
+        
+
+        
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Francisco Luna</h2>
+                        <h2 class="frente">Scrum Master</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/francisco_luna.jpeg"" alt="" class="pp" />
+                                <h2>Francisco Luna</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>SCRUM Master</h3>
+                                <p>Siempre estaré dispuesto a aprender cosas nuevas y a buscarle una solución a un problema. Soy excelente  trabajando en equipo y me gusta compartirle mis conocimientos a los demás. </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+        
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner1" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Raymundo Flores</h2>
+                        <h2 class="frente">Product Owner</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/raymundo_flores.jpeg"" alt="" class="pp" />
+                                <h2>Raymundo Flores</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Product Owner</h3>
+                                <p>Nunca me quedo atrás. Soy muy proactivo. Si tengo una duda me pongo a profundizar en el tema. Soy responsable y me apasiona la programación.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton1"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner2" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Ale Cadena</h2>
+                        <h2 class="frente">Desarrollador</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/ale_cadena .jpeg" alt="" class="pp" />
+                                <h2>Ale Cadena</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Desarrollador</h3>
+                                <p>Tengo una necesidad insaciable de aprender cosas nuevas. Soy extremadamentecreativa, me gusta el diseño gráfico y hacer proyectos innovadores. Soy perfeccionista, me gusta el trabajo bien hecho.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton2"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+
+        
+
+        
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner3" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Luis Anaya</h2>
+                            <h2 class="frente">Desarrollador</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/luis_anaya.jpeg"" alt="" class="pp" />
+                                <h2>Luis Anaya</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Desarrollador</h3>
+                                <p>Me enfoco en cada detalle de mis proyectos, no puede haber un defecto y siempre aspiro a que la experiencia que tenga el usuario sea agradable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton3"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+    
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner4" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Gabriel Aranda</h2>
+                            <h2 class="frente">Desarrollador</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/gabriel_aranda.jpeg"" alt="" class="pp" />
+                                <h2>Gabriel Aranda</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Desarrollador</h3>
+                                <p>Eficiente, trabajador y responsable. Me gusta trabajar en equipo y apoyar a mis compañeros en cualquier duda que les pueda surgir. Soy un excelente compañero.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton4"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+
+       
+        <div class="contenedor1">
+            <div class="card">
+                <div class="card__inner5" id="tarjeta">
+                    <div class="card__face card__face--front">
+                        <h2 class="frente">Raul Sanchez</h2>
+                            <h2 class="frente">Desarrollador</h2>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="img/desarrolladores/raul_sanchez.jpg"" alt="" class="pp" />
+                                <h2>Raul Sanchez</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Desarrollador</h3>
+                                <p>Soy atento, siempre busco ayudar a los demás. La resolución de problemas es mi fuerte, no tendrás ningún contratiempo con mi trabajo, pues soy muy responsable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="boton5"><a href="#"><i class="fa fa-linkedin-square linked" aria-hidden="true"></i>&nbsp;<strong>Visita mi LinkedIn</strong></a></button>
+        </div>
+        
+
+        
+    </div>
+   
+ 
+</section>
+
+</main>
+
+
+
+
+
+
+
+    <!--******************************************-->
+    <footer class="footer">
+      <p class="footer__texto">
+        Front end Store - Todos los derechos derechos Reservados 2021.
+      </p>
+      <p class="desarrollo">
+          Equipo de desarrollo: <a href="programadores.html">Grupo 4 de Generation Cohorte 2</a>.
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/f4234891f7.js" crossorigin="anonymous"></script>
+    <script src="js/cards.js"></script>
+    
+  </body>
+</html>

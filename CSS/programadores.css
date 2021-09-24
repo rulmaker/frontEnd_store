@@ -1,0 +1,105 @@
+
+
+.contacto-tarjetas {
+    height: 100%vh;
+    /* display: flex;
+    flex-direction: row; */
+    width: 90%;
+    margin: 0 auto;
+    /* flex-wrap: wrap; */
+
+  }
+
+  
+  .tarjetas {
+    
+    padding-top: 5rem;
+  }
+  
+  .contenedor-tarjeta {
+    display: inline-block;
+    
+  }
+
+  .contenedor-tarjeta > p {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  
+  .tarjeta {
+    display: flex;
+    background-color: rgb(61, 103, 243);
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .tarjeta:hover {
+    transform: scale(1.15);
+  }
+  
+  .nombre {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .descripcion {
+    list-style-type: none;
+    background-color: #fff;
+  }
+  
+  
+  .img{
+    list-style:none;
+    float:left;
+      color:#fff;
+      text-decoration:none;
+      padding:10px 12px;
+      display:block;
+  }
+
+  footer {
+      bottom: 0;
+  }
+
+  /** Grid **/
+.grid1 {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  
+  
+  @media (max-width: 1200px) {
+    .grid1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+   
+  @media (max-width: 759px) and (min-width: 100px ) {
+    .grid1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    
+  }
+
+
+
+  @media (max-width: 1350px) {
+    .contenedor-tarjeta {
+        width: 350px;
+        
+      }
+  }
+
+  @media (min-width: 1350px) {
+    .contenedor-tarjeta {
+        width: 350px;
+        
+      }
+  }

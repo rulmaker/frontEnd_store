@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <!--*********************************************-->
+    <header class="header">
+      <a href="index.html">
+        <img class="header__logo" src="img/logo.png" alt="Logotipo" />
+      </a>
+    </header>
+    <nav class="navbar navbar-expand-md navbar-light navegacion">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand navegacion__enlace" href="#">Navbar</a> -->
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon custom-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse menu" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active navegacion__enlace"
+                aria-current="page"
+                href="index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navegacion__enlace"
+                href="contacto.html"
+                style="color: #fff"
+                >Contacto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navegacion__enlace"
+                href="items.html"
+                style="color: #fff"
+                >Tienda</a
+              >
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown link
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li> -->
+          </ul>
+          <!-- <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form> -->
+        </div>
+      </div>
+    </nav>
+    <!--*************************************************-->
+    <main class="contenedor">
+      <h1>Vista de Producto</h1>
+
+      <div class="camisa">
+        <img class="camisa__imagen" src="img/3.jpg" alt="imagen del producto" />
+        <div class="camisa__contenido">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            commodi et quibusdam a reprehenderit praesentium quos magni
+            voluptate.
+          </p>
+          <form class="formulario">
+            <select class="formulario__campo">
+              <option disabled selected>--Seleccionar Talla--</option>
+              <option>Chica</option>
+              <option>Mediana</option>
+              <option>Grande</option>
+            </select>
+            <input
+              class="formulario__campo"
+              type="number"
+              placeholder="Cantidad"
+              min="0"
+            />
+            <input
+              class="formulario__submit"
+              type="submit"
+              value="Agregar al carrito"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--*************************************************-->
+    <footer class="footer">
+      <p class="footer__texto">
+        Front end Store - Todos los derechos derechos Reservados 2021.
+      </p>
+      <p class="desarrollo">
+        Equipo de desarrollo:
+        <a href="programadores.html">Grupo 4 de Generation Cohorte 2</a>.
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
