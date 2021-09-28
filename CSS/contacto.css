@@ -1,6 +1,6 @@
 :root{
-    --primario_form: #ffc107;
-    --secundario_form: #0097a7;
+    --primario_form: #d3875e;
+    --secundario_form: #22499e;
     --gris: #757575;
     --blanco: #fff
 }
@@ -28,7 +28,6 @@ h2 .conta {
     width: min(60rem, 100% );  /*utiliza el valor más pequeño*/
     margin: 0 auto;           /*centrar contacto*/
     padding: 2rem;
-    border-radius: 1rem;
     display: inline-block;
     
 
@@ -50,7 +49,7 @@ h2 .conta {
  
 
   .boton {
-    background-color: var(--secundario_form);
+    background-color: #14213d;
     color: var(--blanco);
     padding: 1rem 3rem;
     margin-top: 2rem;
@@ -58,10 +57,22 @@ h2 .conta {
     text-decoration: none;
     text-transform: uppercase; /*texto en mayusculas*/
     font-weight: 700;          /*GRUESO DE LAS LETRAS*/
-    border-radius: 0.5rem;
     width: 50%;
     text-align: center;
     border: none;
+  }
+
+  .boton:disabled {
+    background-color: #757575;
+    border: 1px solid black;
+  }
+
+  .boton:hover:enabled{
+    background-color: var(--secundario_form);
+  }
+
+  .boton:active{
+    transform: scale(0.96);
   }
 
    @media (min-width : 768px){ 
