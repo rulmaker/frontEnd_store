@@ -43,6 +43,10 @@ button:hover{
   transform: scale(1.05);
 }
 
+button:active {
+  transform: scale(0.96);
+}
+
 button a{
   text-decoration: mone;
   color: black;  
