@@ -103,6 +103,11 @@
       </div>
     </nav>
 
+    <main>
+      <h1>My list</h1>
+<div id="list-items">
+    </main>
+
     <footer class="footer">
       <p class="footer__texto">
         Front end Store - Todos los derechos derechos Reservados 2021.
@@ -118,5 +123,32 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function addItem(item) {
+    const itemHTML = '<div class="card" style="width: 18rem;">\n' +
+        '    <img src="' + item.img + '" class="card-img-top" alt="image">\n' +
+        '    <div class="card-body">\n' +
+        '        <h5 class="card-title">' + item.name + '</h5>\n' +
+        '        <p class="card-text">' + item.description + '</p>\n' +
+        '        <a href="#" class="btn btn-primary">Add</a>\n' +
+        '    </div>\n' +
+        '</div>\n' +
+        '<br/>';
+    const itemsContainer = document.getElementById("list-items");
+    itemsContainer.innerHTML += itemHTML;
+}
+
+addItem({
+    'name': 'juice',
+    'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
+    'description': 'Orange and Apple juice fresh and delicious'
+});
+
+addItem({
+    'name': 'Tayto',
+    'img': 'https://www.irishtimes.com/polopoly_fs/1.4078148!/image/image.jpg',
+    'description': 'Cheese & Onion Chips'
+})
+    </script>
   </body>
 </html>
