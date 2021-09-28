@@ -1,5 +1,5 @@
 :root{
-    --primario_form: #d3875e;
+    --primario_form: #eef120;
     --secundario_form: #22499e;
     --gris: #757575;
     --blanco: #fff
@@ -42,7 +42,7 @@ h2 .conta {
     text-transform: uppercase; /*para que sea mayusculas*/
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--primario_form);
+    color: #14213d;
 
   }
 
