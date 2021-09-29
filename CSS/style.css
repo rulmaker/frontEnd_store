@@ -63,6 +63,11 @@ h4 {
 
 /** Header **/
 
+.titulo_tienda{
+  margin: 5rem;
+}
+
+
 
 .logo_img{
   width: 60px;
@@ -112,7 +117,7 @@ h4 {
   }
 
   .nav-item:hover {
-    background-color: #8b4d6d;
+   /*  background-color: #8b4d6d; */
     width: 100%;
   }
 
@@ -140,6 +145,19 @@ h4 {
 a:hover {
   color: var(--secundario) !important;
 }
+
+
+/*Carrusel*/
+div.carousel-inner{
+  height: 69vh;
+}
+
+@media(max-width: 860px){
+  div.carousel-inner{
+    height: 50vh;
+  }
+}
+
 
 /** Grid **/
 .grid {
