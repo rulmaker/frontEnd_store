@@ -66,6 +66,7 @@ main{
   .boton:disabled {
     background-color: #757575;
     border: 1px solid black;
+    cursor: not-allowed;
   }
 
   .boton:hover:enabled{
