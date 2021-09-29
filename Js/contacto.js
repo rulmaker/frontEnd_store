@@ -7,17 +7,21 @@ const $parr = document.querySelector('#advertencia');
 const $enviar = document.querySelector('#enviar');
 
 
-
+//validar formulario
 
 $form.addEventListener('keydown', e => {
-    if ($nombre.value.length >= 1) {
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
+
+    if (regexEmail.test($email.value) == true && $nombre.value.length >= 1 && $tel.value.length >= 1) {
         $enviar.removeAttribute("disabled");
 
-    } else if ($nombre.value.length < 1) {
+    } else if (regexEmail.test($email.value) == false || $nombre.value.length < 1 || $tel.value.length < 1) {
         $enviar.setAttribute("disabled", "");
     }
 
 })
+
+//enviar formulario
 
 $form.addEventListener('submit', handleSubmit);
 
