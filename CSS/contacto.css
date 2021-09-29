@@ -121,3 +121,13 @@ h2 .conta {
   .alinear-derecha{
     justify-content:flex-end;
   }
+
+  .error { 
+    outline: 2px solid rgb(172, 85, 85);
+    
+}
+
+.right { 
+  outline: 2px solid rgb(84, 128, 84);
+  
+}
