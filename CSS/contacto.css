@@ -12,9 +12,19 @@ main{
 
 /********|||||contacto|||||********/
 
+.contacto {
+  margin: 3rem 0 3rem 0;
+}
+
 .conta {
     font-size: 2.8rem;
     margin-bottom: 4rem;
+  }
+
+
+  .nosotros  {
+    width: 95%;
+    margin-left: 2rem;
   }
 
 .formulario_sect {
