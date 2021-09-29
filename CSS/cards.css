@@ -14,15 +14,16 @@
    align-items: center;
 }
 
+.titulo {
+  font-size: 6rem;
+}
+
 .cta {
   margin-top: 6rem;
   margin-bottom: 0;
   color: #fff;
   letter-spacing: 1.5px;
-  text-shadow: 1px  0px 0px black,
-               0px  1px 0px black,
-              -1px  0px 0px black,
-               0px -1px 0px black;
+  font-size: 4rem;
 }
 
 button {
@@ -70,6 +71,8 @@ main {
     height: 600px;
     perspective: 1000px;
     z-index: 10;
+    border: none;
+    border-radius: 20px;
 }
   
 .card__inner {
@@ -161,7 +164,7 @@ main {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-    /* border-radius: 16px; */
+    border-radius: 16px;
     
   }
   

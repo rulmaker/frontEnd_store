@@ -105,7 +105,7 @@
 
     <main>
       <h1>My list</h1>
-<div id="list-items">
+      <div id="list-items" class="grid"></div>
     </main>
 
     <footer class="footer">
@@ -125,30 +125,86 @@
     ></script>
     <script>
       function addItem(item) {
-    const itemHTML = '<div class="card" style="width: 18rem;">\n' +
-        '    <img src="' + item.img + '" class="card-img-top" alt="image">\n' +
-        '    <div class="card-body">\n' +
-        '        <h5 class="card-title">' + item.name + '</h5>\n' +
-        '        <p class="card-text">' + item.description + '</p>\n' +
-        '        <a href="#" class="btn btn-primary">Add</a>\n' +
-        '    </div>\n' +
-        '</div>\n' +
-        '<br/>';
-    const itemsContainer = document.getElementById("list-items");
-    itemsContainer.innerHTML += itemHTML;
-}
+        const itemHTML =
+          "<div >" +
+          '<div class="producto" ">\n' +
+          '    <img src="' +
+          item.img +
+          '" class="procucto__imagen" alt="image">\n' +
+          '    <div class="card-body">\n' +
+          '    <h3 class="card-title">' +
+          item.name +
+          "</h5>\n" +
+          '    <h4 class="card-text">' +
+          item.description +
+          "</h4>\n" +
+          "    </div>\n" +
+          '<a href="#" class="btn btn-primary">Añadir al carrito</a>\n' +
+          "</div>" +
+          "</div>";
+        const itemsContainer = document.getElementById("list-items");
+        itemsContainer.innerHTML += itemHTML;
+      }
 
-addItem({
-    'name': 'juice',
-    'img': 'https://www.gs1india.org/media/Juice_pack.jpg',
-    'description': 'Orange and Apple juice fresh and delicious'
-});
+      addItem({
+        name: "Camisa VUEJS",
+        img: "img/1.jpg",
+        description: "Demuestra tus habilidades de VueJs con esta camisa cool",
+      });
 
-addItem({
-    'name': 'Tayto',
-    'img': 'https://www.irishtimes.com/polopoly_fs/1.4078148!/image/image.jpg',
-    'description': 'Cheese & Onion Chips'
-})
+      addItem({
+        name: "Camisa ANGULARJS",
+        img: "img/2.jpg",
+        description: "AngularJs",
+      });
+
+      addItem({
+        name: "Camisa REACTJS",
+        img: "img/3.jpg",
+        description: "ReactJs",
+      });
+
+      addItem({
+        name: "Redux",
+        img: "img/4.jpg",
+        description: "Redux",
+      });
+
+      addItem({
+        name: "NODEJS",
+        img: "img/5.jpg",
+        description: "NodeJs",
+      });
+
+      addItem({
+        name: "HTML5",
+        img: "img/7.jpg",
+        description: "HTML5",
+      });
+
+      addItem({
+        name: "GitHub",
+        img: "img/8.jpg",
+        description: "GitHub",
+      });
+
+      addItem({
+        name: "TypeScript",
+        img: "img/10.jpg",
+        description: "TypeScript",
+      });
+
+      addItem({
+        name: "JavaScript",
+        img: "img/12.jpg",
+        description: "JavaScript",
+      });
+
+      addItem({
+        name: "GraphQL",
+        img: "img/13.jpg",
+        description: "GraphQL",
+      });
     </script>
   </body>
 </html>
