@@ -29,7 +29,7 @@ $form.addEventListener('keydown', e => {
 
 $email.addEventListener('keydown', e => {
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-    if (regexEmail.test($email.value) == false) {
+    if (!regexEmail.test($email.value)) {
         $email.classList.add("error");
     } else {
         $email.classList.remove("error");
@@ -46,7 +46,7 @@ $mensaje.addEventListener('keydown', e => {
 
 $tel.addEventListener('keydown', e => {
     let regextel = /^([0-9-])*$/;
-    if (regextel.test($tel.value) == false) {
+    if (!regextel.test($tel.value)) {
         $tel.classList.add("error");
     } else {
         $tel.classList.remove("error");
