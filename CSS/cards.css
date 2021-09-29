@@ -72,7 +72,7 @@ main {
     perspective: 1000px;
     z-index: 10;
     border: none;
-    border-radius: 20px;
+    /* border-radius: 5px; */
 }
   
 .card__inner {
@@ -164,7 +164,7 @@ main {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     overflow: hidden;
-    border-radius: 16px;
+   /*  border-radius: 16px; */
     
   }
   
