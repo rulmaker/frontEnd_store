@@ -12,10 +12,10 @@ const $enviar = document.querySelector('#enviar');
 $form.addEventListener('keydown', e => {
     let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
 
-    if (regexEmail.test($email.value) == true && $nombre.value.length >= 1 && $tel.value.length >= 1) {
+    if (regexEmail.test($email.value) == true && $nombre.value.length >= 1 && $tel.value.length >= 1 && $mensaje.value.length >= 1) {
         $enviar.removeAttribute("disabled");
 
-    } else if (regexEmail.test($email.value) == false || $nombre.value.length < 1 || $tel.value.length < 1) {
+    } else if (regexEmail.test($email.value) == false || $nombre.value.length < 1 || $tel.value.length < 1 || $mensaje.value.length < 1) {
         $enviar.setAttribute("disabled", "");
     }
 
