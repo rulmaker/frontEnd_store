@@ -30,7 +30,7 @@ main{
     margin: 0 auto;           /*centrar contacto*/
     padding: 2rem;
     display: inline-block;
-    
+    border-radius: 10px;
 
   }
   
@@ -131,6 +131,7 @@ main{
 
   .error { 
     outline: 2px solid rgb(172, 85, 85);
+  
     
 }
 
