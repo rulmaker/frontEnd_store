@@ -24,7 +24,10 @@ main{
 
   .nosotros  {
     width: 95%;
-    margin-left: 2rem;
+  }
+
+  .nosotros p{
+    padding-left: 2rem;
   }
 
 .formulario_sect {
