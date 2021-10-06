@@ -13,7 +13,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; 
+  /* font-size: 62.5%; */ 
 }
 
 *, *:before, *:after {
@@ -27,7 +27,7 @@ body {
   line-height: 1.5;
 }
 p {
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--blanco);
 }
@@ -47,13 +47,13 @@ h1, h2, h3 {
   font-family: var(--fuentePrincipal);
 }
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 h2 {
-  font-size: 3.2rem;
+  font-size: 2.2rem;
 }
 h3 {
-  font-size: 2.4rem;
+  font-size: 1.4rem;
 }
 h4 {
   text-align: center;
@@ -104,7 +104,7 @@ h4 {
 }
 .navegacion__enlace {
   font-family: var(--fuentePrincipal);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .nav-link:hover{
@@ -178,7 +178,7 @@ div.carousel-inner{
 }
 
 .producto__nombre {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 .producto__precio {
   font-size: 2.8rem;
@@ -341,7 +341,24 @@ footer > p {
 
 
 
+/* crear-producto */
 
+
+.mensaje-contenedor{
+  height: 3rem;
+  width: 100%;
+  align-items: center;
+}
+
+
+.form-group label{
+  font-size: 1.25rem;
+}
+
+form div.btn-enviar{
+  display: flex;
+  justify-content: center;
+}
 
 
 

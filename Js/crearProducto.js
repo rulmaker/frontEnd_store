@@ -1,4 +1,4 @@
-function addItem(item) {
+/* function addItem(item) {
     const itemHTML =
         "<div >" +
         '<div class="producto" ">\n' +
@@ -9,18 +9,18 @@ function addItem(item) {
         '    <h3 class="card-title">' +
         item.name +
         "</h5>\n" +
-        '    <h4 class="card-text">' +
+        '    <p class="card-text">' +
         item.description +
-        "</h4>\n" +
+        "</p>\n" +
         "    </div>\n" +
         '<a href="#" class="btn btn-primary">Añadir al carrito</a>\n' +
         "</div>" +
         "</div>";
     const itemsContainer = document.getElementById("list-items");
     itemsContainer.innerHTML += itemHTML;
-}
+} */
 
-addItem({
+/* addItem({
     name: "Camisa VUEJS",
     img: "img/1.jpg",
     description:
@@ -86,4 +86,118 @@ addItem({
     name: "GraphQL",
     img: "img/13.jpg",
     description: "Se vale salir a la calle nomás para lucirla.",
-});
+}); */
+
+class Product {
+    constructor(name, image, description, talla, price,) {
+        this.name = name;
+        this.image = image;
+        this.description = description;
+        this.talla = talla;
+        this.price = price;
+
+    }
+
+}
+
+/* <div class="card text-center mb-4">
+            <div class="card-body">
+                <strong>Product</strong>: ${product.name}
+                <strong>Product Price</strong>: ${product.price}
+                <strong>Product Year</strong>: ${product.year}
+                <a href="#" class="btn btn-danger" name="delete">Delete</a>
+            </div>
+        </div>
+        
+        <div>
+        <div class="producto">
+        <img src="${product.image}" class="producto__imagen" alt="imagen">
+        <div class="card-body">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">${product.description}</p>
+        
+        </div>
+        </div>
+        </div>*/
+
+class UI {
+    addProduct(product) {
+        const productList = document.getElementById('list-items');
+        const element = document.createElement('div');
+        element.innerHTML = `
+        <div class="mb-4">
+        <div class="producto">
+        <img src="${product.image}" class="producto__imagen" alt="imagen">
+        <div class="card-body justify-content-center">
+        <h5 class="card-title">${product.name}</h5>
+        <p class="card-text">${product.description}</p>
+        <p><strong>Talla</strong>; ${product.talla}</p>
+        <p><strong>Precio</strong>: $${product.price}</p>
+        
+        <button class="btn btn-danger" name="delete">Borrar</button>
+        
+        </div>
+        </div>
+        </div>`;
+        productList.appendChild(element);
+
+    }
+
+    resetForm() {
+        document.getElementById('product-form').reset();
+    }
+
+    deleteProduct(element) {
+        if (element.name === 'delete') {
+            element.parentElement.parentElement.parentElement.remove();
+            this.showMessage('Producto borrado exitosamente', 'info');
+
+        }
+    }
+
+    showMessage(message, cssClass) {
+        const div = document.createElement('div');
+        div.className = `alert alert-${cssClass}`;
+        div.appendChild(document.createTextNode(message));
+        //SHOWING IN DOM
+        const container = document.querySelector('.mensaje-contenedor');
+        const app = document.querySelector('container');
+        container.insertBefore(div, app);
+
+        setTimeout(function () {
+            document.querySelector('.alert').remove();
+        }, 1500);
+    }
+}
+
+//DOM EVENTS
+document.getElementById('product-form')
+    .addEventListener('submit', function (e) {
+        const name = document.getElementById('name').value;
+        const image = document.getElementById('image').value;
+        const description = document.getElementById('description').value;
+        const talla = document.getElementById('talla').value;
+        const price = document.getElementById('price').value;
+
+
+        const product = new Product(name, image, description, talla, price);
+
+        const ui = new UI();
+
+        if (name === "" || price === "" || image === "" || description === "" || talla === "") {
+            return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
+        }
+
+        ui.addProduct(product);
+
+        ui.resetForm();
+
+        ui.showMessage('Product added successfully', 'success');
+
+        e.preventDefault();
+    });
+
+document.getElementById('list-items').addEventListener('click', function (e) {
+    const ui = new UI();
+    ui.deleteProduct(e.target);
+})
