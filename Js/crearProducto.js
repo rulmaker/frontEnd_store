@@ -1,4 +1,4 @@
-let arrayProductos = [];
+let arrayProductos = [];//almacena elementos que seran guardados en loca
 
 class Product {
     constructor(name, image, description, talla, price,) {
@@ -13,6 +13,7 @@ class Product {
 }
 
 class UI {
+    //pintar elemento en dom
     addProduct(product) {
         const productList = document.getElementById('list-items');
         const element = document.createElement('div');
@@ -35,6 +36,7 @@ class UI {
 
     }
 
+    //crea objeto con datos del producto
     crearItem(product) {
         let item = {
             nombre: product.name,
@@ -87,10 +89,43 @@ class UI {
 
 
 //FUNCTIONS
-
+//guarda objeto Item en local storage
 const guardarDB = () => {
     localStorage.setItem('productos', JSON.stringify(arrayProductos));
+
 }
+
+
+//Funcion que pinta datos al recargar
+const pintarDB = () => {
+    arrayProductos = JSON.parse(localStorage.getItem('productos'));
+
+    if (arrayProductos === null) {
+        arrayProductos = [];
+    } else {
+        arrayProductos.forEach(el => {
+            const productList = document.getElementById('list-items');
+            const element = document.createElement('div');
+            element.innerHTML = `
+            <div class="mb-4">
+            <div class="producto">
+            <img src="${el.image}" class="producto__imagen" alt="imagen">
+            <div class="card-body justify-content-center">
+            <h5 class="card-title">${el.name}</h5>
+            <p class="card-text">${el.description}</p>
+            <p><strong>Talla</strong>; ${el.talla}</p>
+            <p><strong>Precio</strong>: $${el.price}</p>
+            
+            <button class="btn btn-danger" name="delete">Borrar</button>
+            
+            </div>
+            </div>
+            </div>`;
+            productList.appendChild(element);
+        })
+    }
+}
+
 
 //DOM EVENTS
 document.getElementById('product-form')
@@ -116,6 +151,7 @@ document.getElementById('product-form')
 
         guardarDB();
 
+
         ui.resetForm();
 
         ui.showMessage('Product added successfully', 'success');
@@ -127,3 +163,6 @@ document.getElementById('list-items').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteProduct(e.target);
 })
+
+//pintar datos de localStorage al recargar
+document.addEventListener('DOMContentLoaded', pintarDB);
