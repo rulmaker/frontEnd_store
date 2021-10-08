@@ -16,10 +16,21 @@ main{
   margin: 3rem 0 3rem 0;
   
 }
-
+p{
+  text-align: justify;
+  top: 40 px;
+  bottom:40px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: 'Libre Franklin', sans-serif;
+  color: white;
+}
+.nosotros__imagen{
+  border-radius: 20px;
+}
 .conta {
     font-size: 1.8rem;
-    margin-bottom: 4rem;
+    margin-bottom: 4re  m;
   }
 
 
