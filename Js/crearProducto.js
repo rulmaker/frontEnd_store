@@ -14,11 +14,11 @@ class Product {
 
 class UI {
     //pintar elemento en dom
-    addProduct(product) {
+    /* addProduct(product) {
         const productList = document.getElementById('list-items');
         const element = document.createElement('div');
         element.innerHTML = `
-        <div class="mb-4">
+        <div class="mb-4" id="${}">
         <div class="producto">
         <img src="${product.image}" class="producto__imagen" alt="imagen">
         <div class="card-body justify-content-center">
@@ -28,13 +28,14 @@ class UI {
         <p><strong>Precio</strong>: $${product.price}</p>
         
         <button class="btn btn-danger" name="delete">Borrar</button>
-        
+        <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+
         </div>
         </div>
         </div>`;
         productList.appendChild(element);
 
-    }
+    } */
 
     //crea objeto con datos del producto
     crearItem(product) {
@@ -45,12 +46,14 @@ class UI {
             talla: product.talla,
             precio: product.price,
             ID: this.newID()
+
         }
 
         arrayProductos.push(item);
 
         return arrayProductos;
     }
+
 
 
     newID() {
@@ -89,41 +92,87 @@ class UI {
 
 
 //FUNCTIONS
+
+
+
+
 //guarda objeto Item en local storage
+
+
+
 const guardarDB = () => {
     localStorage.setItem('productos', JSON.stringify(arrayProductos));
 
 }
 
+function showID() {
+
+    const num = JSON.parse(localStorage.getItem('productos'));
+    console.log(num[e.target.dataSet.ID]);
+}
+
+//pintar solo el ultimo elemento de DB
+const agregarDB = () => {
+    arrayProductos = JSON.parse(localStorage.getItem('productos'));
+    let count = 0;
+    for (i = 0; i < arrayProductos.length; i++) {
+        count = i;
+
+    }
+    console.log(arrayProductos[count])
+
+
+    let lastElement = arrayProductos[count];
+    const productList = document.getElementById('list-items');
+    const element = document.createElement('div');
+    element.innerHTML = `
+             <div class="mb-4" id="${lastElement.ID}" >
+             <div class="producto">
+             <img src="${lastElement.imagen}" class="producto__imagen" alt="imagen">
+             <div class="card-body justify-content-center">
+             <h5 class="card-title">Nombre: ${lastElement.nombre}</h5>
+             <p class="card-text">Descripción: ${lastElement.descripcion}</p>
+             <p><strong>Talla</strong>Talla: ${lastElement.talla}</p>
+             <p><strong>Precio</strong>Precio: $${lastElement.precio}</p>
+             
+             <button class="btn btn-danger" name="delete">Borrar</button>
+             <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+             
+             </div>
+             </div>
+             </div>`;
+    productList.appendChild(element);
+
+
+}
 
 //Funcion que pinta datos al recargar
 const pintarDB = () => {
     arrayProductos = JSON.parse(localStorage.getItem('productos'));
 
-    if (arrayProductos === null) {
-        arrayProductos = [];
-    } else {
-        arrayProductos.forEach(el => {
-            const productList = document.getElementById('list-items');
-            const element = document.createElement('div');
-            element.innerHTML = `
-            <div class="mb-4">
+
+    arrayProductos.forEach(el => {
+        const productList = document.getElementById('list-items');
+        const element = document.createElement('div');
+        element.innerHTML = `
+            <div class="mb-4" id="${el.ID}" >
             <div class="producto">
-            <img src="${el.image}" class="producto__imagen" alt="imagen">
+            <img src="${el.imagen}" class="producto__imagen" alt="imagen">
             <div class="card-body justify-content-center">
-            <h5 class="card-title">${el.name}</h5>
-            <p class="card-text">${el.description}</p>
-            <p><strong>Talla</strong>; ${el.talla}</p>
-            <p><strong>Precio</strong>: $${el.price}</p>
+            <h5 class="card-title">Nombre: ${el.nombre}</h5>
+            <p class="card-text">Descripción: ${el.descripcion}</p>
+            <p><strong>Talla</strong>Talla: ${el.talla}</p>
+            <p><strong>Precio</strong>Precio: $${el.precio}</p>
             
             <button class="btn btn-danger" name="delete">Borrar</button>
+            <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
             
             </div>
             </div>
             </div>`;
-            productList.appendChild(element);
-        })
-    }
+        productList.appendChild(element);
+    })
+
 }
 
 
@@ -145,12 +194,18 @@ document.getElementById('product-form')
             return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
         }
 
-        ui.addProduct(product);
+        console.log(name);
+        console.log(image);
+        console.log(description);
+        console.log(talla);
+        console.log(price);
+        /* ui.addProduct(product); */
 
         ui.crearItem(product);
 
         guardarDB();
 
+        agregarDB();
 
         ui.resetForm();
 
