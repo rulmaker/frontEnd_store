@@ -27,9 +27,13 @@ body {
   line-height: 1.5;
 }
 p {
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--blanco);
+  text-align: justify;
+  margin-top: 100px;
+  margin-bottom:100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Libre Franklin', sans-serif;
+  color: white;
 }
 a {
   text-decoration: none;
@@ -318,24 +322,13 @@ div.carousel-inner{
 
 
 /** Footer **/
-.footer {
+footer{
   background-color: var(--primarioOscuro);
-  padding: 1rem 0;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
+  padding: 20px;
+  margin-top: 100px;
   justify-content: center;
   align-items: center;
-}
-.footer__texto {
-  font-family: var(--fuentePrincipal);
-  text-align: center;
-  font-size: 2.2rem;
-}
-
-footer > p {
-  margin-top: .8rem;
-  margin-bottom: .8rem;
+  position:absolute bottom;
 }
 
 
@@ -361,5 +354,29 @@ form div.btn-enviar{
 }
 
 
+/* Productos en tendencia*/
 
-
+.tendencias{
+  width: 90%;
+  max-width: 500px;
+  height: 90%;
+  margin:20px;
+  display: grid;
+  grid-gap:60px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+}
+.tendencias .VueJs{
+  background-color: #5d2e46;
+}
+.tendencias .playeraH5{
+background-color: #5d2e46;
+}
+@media screen and (max-width:768px){
+  .VueJs{
+  grid-column: 1/-1;
+}
+.playeraH5{
+  grid-column: 1/-1;
+}
+}

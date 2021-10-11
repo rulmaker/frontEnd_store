@@ -16,10 +16,11 @@ main{
   margin: 3rem 0 3rem 0;
   
 }
+
 p{
   text-align: justify;
-  top: 40 px;
-  bottom:40px;
+  top: 20 px;
+  bottom:20px;
   margin-left: 50px;
   margin-right: 50px;
   font-family: 'Libre Franklin', sans-serif;
