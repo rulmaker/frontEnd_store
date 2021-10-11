@@ -69,14 +69,24 @@ class UI {
 
     deleteProduct(element) {
         const elemento = element.parentElement.parentElement.parentElement;
+        let productos = JSON.parse(localStorage.getItem('productos'));
+        let elID = elemento.id;
 
         if (element.name === 'delete') {
-
-
             elemento.remove();
-            this.showMessage('Producto borrado exitosamente', 'info');
 
+
+            //eliminar BD
+            delete productos[parseInt(elID)]
+            arrayProductos = productos;
+            guardarDB();
+            location.reload();
+            /* this.showMessage('Producto borrado exitosamente', 'info'); */
+            resetDB();
         }
+
+
+
     }
 
     showMessage(message, cssClass) {
@@ -95,10 +105,20 @@ class UI {
 }
 
 
+
+
+
 //FUNCTIONS
 
 
+//resetea localStorage si todos los elementos estan vacios
+function resetDB() {
+    let comprobarDB = JSON.parse(localStorage.getItem('productos'));
 
+    if (comprobarDB.every(element => element === null)) {
+        localStorage.clear();
+    }
+}
 
 //guarda objeto Item en local storage
 
@@ -117,7 +137,7 @@ function showID() {
 
 //pintar solo el ultimo elemento de DB
 const agregarDB = () => {
-    arrayProductos = JSON.parse(localStorage.getItem('productos'));
+    let productoNuevo = JSON.parse(localStorage.getItem('productos'));
     let count = 0;
     for (i = 0; i < arrayProductos.length; i++) {
         count = i;
@@ -126,7 +146,7 @@ const agregarDB = () => {
 
 
 
-    let lastElement = arrayProductos[count];
+    let lastElement = productoNuevo[count];
     const productList = document.getElementById('list-items');
     const element = document.createElement('div');
     element.innerHTML = `
@@ -158,9 +178,12 @@ const pintarDB = () => {
         arrayProductos = [];
     } else {
         arrayProductos.forEach(el => {
-            const productList = document.getElementById('list-items');
-            const element = document.createElement('div');
-            element.innerHTML = `
+            if (el === null) {
+                el = ""
+            } else {
+                const productList = document.getElementById('list-items');
+                const element = document.createElement('div');
+                element.innerHTML = `
                 <div class="mb-4" id="${el.ID}" >
                 <div class="producto">
                 <img src="${el.imagen}" class="producto__imagen" alt="imagen">
@@ -176,7 +199,8 @@ const pintarDB = () => {
                 </div>
                 </div>
                 </div>`;
-            productList.appendChild(element);
+                productList.appendChild(element);
+            }
         })
     }
 }
@@ -200,11 +224,6 @@ document.getElementById('product-form')
             return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
         }
 
-        console.log(name);
-        console.log(image);
-        console.log(description);
-        console.log(talla);
-        console.log(price);
         /* ui.addProduct(product); */
 
         ui.crearItem(product);
