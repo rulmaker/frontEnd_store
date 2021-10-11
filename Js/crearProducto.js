@@ -68,8 +68,12 @@ class UI {
     }
 
     deleteProduct(element) {
+        const elemento = element.parentElement.parentElement.parentElement;
+
         if (element.name === 'delete') {
-            element.parentElement.parentElement.parentElement.remove();
+
+
+            elemento.remove();
             this.showMessage('Producto borrado exitosamente', 'info');
 
         }
@@ -106,9 +110,9 @@ const guardarDB = () => {
 }
 
 function showID() {
-
+    const numero = document.getElementsByClassName('mb-4').id;
     const num = JSON.parse(localStorage.getItem('productos'));
-    console.log(num[e.target.dataSet.ID]);
+
 }
 
 //pintar solo el ultimo elemento de DB
@@ -119,7 +123,7 @@ const agregarDB = () => {
         count = i;
 
     }
-    console.log(arrayProductos[count])
+
 
 
     let lastElement = arrayProductos[count];
@@ -130,8 +134,8 @@ const agregarDB = () => {
              <div class="producto">
              <img src="${lastElement.imagen}" class="producto__imagen" alt="imagen">
              <div class="card-body justify-content-center">
-             <h5 class="card-title">Nombre: ${lastElement.nombre}</h5>
-             <p class="card-text">Descripción: ${lastElement.descripcion}</p>
+             <h5 class="card-title"><strong>Nombre</strong>: ${lastElement.nombre}</h5>
+             <p class="card-text"><strong>Descripción</strong>: ${lastElement.descripcion}</p>
              <p><strong>Talla</strong>Talla: ${lastElement.talla}</p>
              <p><strong>Precio</strong>Precio: $${lastElement.precio}</p>
              
@@ -150,29 +154,31 @@ const agregarDB = () => {
 const pintarDB = () => {
     arrayProductos = JSON.parse(localStorage.getItem('productos'));
 
-
-    arrayProductos.forEach(el => {
-        const productList = document.getElementById('list-items');
-        const element = document.createElement('div');
-        element.innerHTML = `
-            <div class="mb-4" id="${el.ID}" >
-            <div class="producto">
-            <img src="${el.imagen}" class="producto__imagen" alt="imagen">
-            <div class="card-body justify-content-center">
-            <h5 class="card-title">Nombre: ${el.nombre}</h5>
-            <p class="card-text">Descripción: ${el.descripcion}</p>
-            <p><strong>Talla</strong>Talla: ${el.talla}</p>
-            <p><strong>Precio</strong>Precio: $${el.precio}</p>
-            
-            <button class="btn btn-danger" name="delete">Borrar</button>
-            <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
-            
-            </div>
-            </div>
-            </div>`;
-        productList.appendChild(element);
-    })
-
+    if (arrayProductos === null) {
+        arrayProductos = [];
+    } else {
+        arrayProductos.forEach(el => {
+            const productList = document.getElementById('list-items');
+            const element = document.createElement('div');
+            element.innerHTML = `
+                <div class="mb-4" id="${el.ID}" >
+                <div class="producto">
+                <img src="${el.imagen}" class="producto__imagen" alt="imagen">
+                <div class="card-body justify-content-center">
+                <h5 class="card-title"><strong>Nombre</strong>: ${el.nombre}</h5>
+                <p class="card-text"><strong>Descripción</strong>: ${el.descripcion}</p>
+                <p><strong>Talla</strong>: ${el.talla}</p>
+                <p><strong>Precio</strong>: $ ${el.precio}</p>
+                
+                <button class="btn btn-danger" name="delete">Borrar</button>
+                <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+                
+                </div>
+                </div>
+                </div>`;
+            productList.appendChild(element);
+        })
+    }
 }
 
 
