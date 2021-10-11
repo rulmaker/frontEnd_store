@@ -1,92 +1,4 @@
-/* function addItem(item) {
-    const itemHTML =
-        "<div >" +
-        '<div class="producto" ">\n' +
-        '    <img src="' +
-        item.img +
-        '" class="procucto__imagen" alt="image">\n' +
-        '    <div class="card-body">\n' +
-        '    <h3 class="card-title">' +
-        item.name +
-        "</h5>\n" +
-        '    <p class="card-text">' +
-        item.description +
-        "</p>\n" +
-        "    </div>\n" +
-        '<a href="#" class="btn btn-primary">Añadir al carrito</a>\n' +
-        "</div>" +
-        "</div>";
-    const itemsContainer = document.getElementById("list-items");
-    itemsContainer.innerHTML += itemHTML;
-} */
-
-/* addItem({
-    name: "Camisa VUEJS",
-    img: "img/1.jpg",
-    description:
-        "Demuestra tus habilidades de VueJs con esta camisa cool. Sé el alma de la oficina.",
-});
-
-addItem({
-    name: "Camisa ANGULARJS",
-    img: "img/2.jpg",
-    description:
-        "Sé la envidia de todos tus amigos con la playera ANGULARJS, que te hará parecer todo un hacker del pentágono.",
-});
-
-addItem({
-    name: "Camisa REACTJS",
-    img: "img/3.jpg",
-    description:
-        "Destaca entre la multitud con la playera REACT JS, que te hará parecer un genio.",
-});
-
-addItem({
-    name: "Redux",
-    img: "img/4.jpg",
-    description:
-        "Con nuestra playera Redux más de una persona se te quedará mirando en la calle.",
-});
-
-addItem({
-    name: "NODEJS",
-    img: "img/5.jpg",
-    description:
-        "Con nuestra playera NODEJS parecerás un desarrollador Senior, serás la envidia de toda la oficina.",
-});
-
-addItem({
-    name: "HTML5",
-    img: "img/7.jpg",
-    description:
-        "Si eres amante de HTML, esta playera es para ti. Apta para salir a la salir a las tortillas o a los XV de tu prima.",
-});
-
-addItem({
-    name: "GitHub",
-    img: "img/8.jpg",
-    description:
-        "Solo para desarrolladores hipsters. Se vale salir a lucirla.",
-});
-
-addItem({
-    name: "TypeScript",
-    img: "img/10.jpg",
-    description: "Para los geeks que se atreven a mostrar su verdadero yo.",
-});
-
-addItem({
-    name: "JavaScript",
-    img: "img/12.jpg",
-    description:
-        "Para los que aman el front-end y el back-end por igual. Si la usas no pasarás desapercibido.",
-});
-
-addItem({
-    name: "GraphQL",
-    img: "img/13.jpg",
-    description: "Se vale salir a la calle nomás para lucirla.",
-}); */
+let arrayProductos = [];//almacena elementos que seran guardados en loca
 
 class Product {
     constructor(name, image, description, talla, price,) {
@@ -100,32 +12,13 @@ class Product {
 
 }
 
-/* <div class="card text-center mb-4">
-            <div class="card-body">
-                <strong>Product</strong>: ${product.name}
-                <strong>Product Price</strong>: ${product.price}
-                <strong>Product Year</strong>: ${product.year}
-                <a href="#" class="btn btn-danger" name="delete">Delete</a>
-            </div>
-        </div>
-        
-        <div>
-        <div class="producto">
-        <img src="${product.image}" class="producto__imagen" alt="imagen">
-        <div class="card-body">
-        <h5 class="card-title">${product.name}</h5>
-        <p class="card-text">${product.description}</p>
-        
-        </div>
-        </div>
-        </div>*/
-
 class UI {
-    addProduct(product) {
+    //pintar elemento en dom
+    /* addProduct(product) {
         const productList = document.getElementById('list-items');
         const element = document.createElement('div');
         element.innerHTML = `
-        <div class="mb-4">
+        <div class="mb-4" id="${}">
         <div class="producto">
         <img src="${product.image}" class="producto__imagen" alt="imagen">
         <div class="card-body justify-content-center">
@@ -135,12 +28,39 @@ class UI {
         <p><strong>Precio</strong>: $${product.price}</p>
         
         <button class="btn btn-danger" name="delete">Borrar</button>
-        
+        <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+
         </div>
         </div>
         </div>`;
         productList.appendChild(element);
 
+    } */
+
+    //crea objeto con datos del producto
+    crearItem(product) {
+        let item = {
+            nombre: product.name,
+            imagen: product.image,
+            descripcion: product.description,
+            talla: product.talla,
+            precio: product.price,
+            ID: this.newID()
+
+        }
+
+        arrayProductos.push(item);
+
+        return arrayProductos;
+    }
+
+
+
+    newID() {
+        let lastID = localStorage.getItem("lastID") || "-1";
+        let newNumberID = JSON.parse(lastID) + 1;
+        localStorage.setItem("lastID", JSON.stringify(newNumberID));
+        return newNumberID
     }
 
     resetForm() {
@@ -170,6 +90,92 @@ class UI {
     }
 }
 
+
+//FUNCTIONS
+
+
+
+
+//guarda objeto Item en local storage
+
+
+
+const guardarDB = () => {
+    localStorage.setItem('productos', JSON.stringify(arrayProductos));
+
+}
+
+function showID() {
+
+    const num = JSON.parse(localStorage.getItem('productos'));
+    console.log(num[e.target.dataSet.ID]);
+}
+
+//pintar solo el ultimo elemento de DB
+const agregarDB = () => {
+    arrayProductos = JSON.parse(localStorage.getItem('productos'));
+    let count = 0;
+    for (i = 0; i < arrayProductos.length; i++) {
+        count = i;
+
+    }
+    console.log(arrayProductos[count])
+
+
+    let lastElement = arrayProductos[count];
+    const productList = document.getElementById('list-items');
+    const element = document.createElement('div');
+    element.innerHTML = `
+             <div class="mb-4" id="${lastElement.ID}" >
+             <div class="producto">
+             <img src="${lastElement.imagen}" class="producto__imagen" alt="imagen">
+             <div class="card-body justify-content-center">
+             <h5 class="card-title">Nombre: ${lastElement.nombre}</h5>
+             <p class="card-text">Descripción: ${lastElement.descripcion}</p>
+             <p><strong>Talla</strong>Talla: ${lastElement.talla}</p>
+             <p><strong>Precio</strong>Precio: $${lastElement.precio}</p>
+             
+             <button class="btn btn-danger" name="delete">Borrar</button>
+             <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+             
+             </div>
+             </div>
+             </div>`;
+    productList.appendChild(element);
+
+
+}
+
+//Funcion que pinta datos al recargar
+const pintarDB = () => {
+    arrayProductos = JSON.parse(localStorage.getItem('productos'));
+
+
+    arrayProductos.forEach(el => {
+        const productList = document.getElementById('list-items');
+        const element = document.createElement('div');
+        element.innerHTML = `
+            <div class="mb-4" id="${el.ID}" >
+            <div class="producto">
+            <img src="${el.imagen}" class="producto__imagen" alt="imagen">
+            <div class="card-body justify-content-center">
+            <h5 class="card-title">Nombre: ${el.nombre}</h5>
+            <p class="card-text">Descripción: ${el.descripcion}</p>
+            <p><strong>Talla</strong>Talla: ${el.talla}</p>
+            <p><strong>Precio</strong>Precio: $${el.precio}</p>
+            
+            <button class="btn btn-danger" name="delete">Borrar</button>
+            <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
+            
+            </div>
+            </div>
+            </div>`;
+        productList.appendChild(element);
+    })
+
+}
+
+
 //DOM EVENTS
 document.getElementById('product-form')
     .addEventListener('submit', function (e) {
@@ -188,7 +194,18 @@ document.getElementById('product-form')
             return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
         }
 
-        ui.addProduct(product);
+        console.log(name);
+        console.log(image);
+        console.log(description);
+        console.log(talla);
+        console.log(price);
+        /* ui.addProduct(product); */
+
+        ui.crearItem(product);
+
+        guardarDB();
+
+        agregarDB();
 
         ui.resetForm();
 
@@ -201,3 +218,6 @@ document.getElementById('list-items').addEventListener('click', function (e) {
     const ui = new UI();
     ui.deleteProduct(e.target);
 })
+
+//pintar datos de localStorage al recargar
+document.addEventListener('DOMContentLoaded', pintarDB);
