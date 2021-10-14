@@ -360,6 +360,28 @@ form div.btn-enviar{
   justify-content: center;
 }
 
+.redesSociales {
+  bottom: 0; 
+  width: 100vw; 
+  height: 10vh; 
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 4rem; 
+}
 
+.iconoinicioDeSesión {
+  bottom: 0;
+  width: 100wv;
+  height: 10vh;
+  margin-left: 200px;
+}
+
+footer i {
+  font-size: 3.5rem;
+}
+
+.redesSociales{
+  height: 4rem;
+}
 
 
