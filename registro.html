@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="CSS/normalize.css" /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="css/registro.css" />
+  </head>
+  <body>
+    <!--*********************************************-->
+    <header class="header">
+      <a href="index.html">
+        <img class="header__logo" src="img/logo.png" alt="Logotipo" />
+      </a>
+    </header>
+    <nav class="navbar navbar-expand-md navbar-light navegacion">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand navegacion__enlace" href="#">Navbar</a> -->
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon custom-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse menu" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active navegacion__enlace"
+                aria-current="page"
+                href="index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navegacion__enlace"
+                href="nosotros.html"
+                style="color: #fff"
+                >Nosotros</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navegacion__enlace"
+                href="contacto.html"
+                style="color: #fff"
+                >Contacto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navegacion__enlace"
+                href="items.html"
+                style="color: #fff"
+                >Tienda</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--*****FFFFFFFFFFFFFFFF***********-->
+
+    <section>
+      <h2 class="R">Registrarse</h2>
+      <div class="container">
+        <div class="formulario1">
+          <div class="logoo">
+            <img src="img/logoA.png" alt="logo" />
+          </div>
+
+          <form id="form" class="form" name="Registro">
+            <div class="form-control">
+              <label for="username">Nombre</label>
+              <input
+                type="text"
+                placeholder="nombre"
+                id="nombre"
+                name="Nombre:"
+              />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="email">Correo electrónico</label>
+              <input
+                type="email"
+                placeholder="ejemplo@email.com"
+                id="correo"
+                name="Correo:"
+              />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="password">Contraseña</label>
+              <input
+                type="password"
+                placeholder="contraseña"
+                id="contraseña"
+                name="Contraseña:"
+              />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <label for="contraseña2">Confirmar contraseña</label>
+              <input
+                type="password"
+                placeholder="contraseña"
+                id="contraseña2"
+                name="Contraseña2:"
+              />
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="form-control">
+              <button>Registrarse</button>
+            </div>
+            <p>Al registrarte aceptas los terminos y condiciones.</p>
+            <p>
+              ¿Ya tienes cuenta?
+              <a class="link" href="login.html">Iniciar sesion</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--*************************-->
+
+    <footer class="footer">
+      <div class="redesSociales">
+        <a href="#"><i class="fab fa-github" style="color: white"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="color: white"></i></a>
+        <a href="#"><i class="fab fa-instagram" style="color: white"></i></a>
+        <a href="#"><i class="fab fa-whatsapp" style="color: white"></i></a>
+        <a href="#"><i class="fab fa-facebook" style="color: white"></i></a>
+      </div>
+      <p class="footer__texto">
+        Open Source - Todos los derechos derechos Reservados 2021.
+      </p>
+      <p class="desarrollo">
+        Equipo de desarrollo:
+        <a href="programadores.html">Grupo 4 de Generation Cohorte 2</a>.
+      </p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/826a99c345.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/registro.js"></script>
+  </body>
+</html>
