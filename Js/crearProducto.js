@@ -13,29 +13,7 @@ class Product {
 }
 
 class UI {
-    //pintar elemento en dom
-    /* addProduct(product) {
-        const productList = document.getElementById('list-items');
-        const element = document.createElement('div');
-        element.innerHTML = `
-        <div class="mb-4" id="${}">
-        <div class="producto">
-        <img src="${product.image}" class="producto__imagen" alt="imagen">
-        <div class="card-body justify-content-center">
-        <h5 class="card-title">${product.name}</h5>
-        <p class="card-text">${product.description}</p>
-        <p><strong>Talla</strong>; ${product.talla}</p>
-        <p><strong>Precio</strong>: $${product.price}</p>
-        
-        <button class="btn btn-danger" name="delete">Borrar</button>
-        <button class="btn btn-primary" onclick="showID()" name="prueba">Prueba</button>
 
-        </div>
-        </div>
-        </div>`;
-        productList.appendChild(element);
-
-    } */
 
     //crea objeto con datos del producto
     crearItem(product) {
