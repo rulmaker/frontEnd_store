@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+  font-size: 13px;
+  font-family: 'Franklin Gothic Medium';
+  }
+  
+  
+  .formulario1{
+    
+    background-color: rgb(197, 174, 174);
+    color: rgb(255, 255, 255);
+    width: 400px;
+    height: 800px;
+    top: 50%;
+    left: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px 30px;
+    border-radius: 20px;
+  }
+  .R{
+      margin-top: 15px;
+      color: rgb(230, 219, 219);
+  }
+  .logoo{
+    margin: 2px auto;
+    text-align: center;
+  }
+  .logoo img{
+    width: 100px;
+    margin: 0 10px;
+    margin: 10px;
+  }
+  
+  .form-control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      position: relative;
+      background: transparent;
+      border: none;
+  }
+  
+  .form-control label {
+      
+      display: inline-block;
+      margin-bottom: 2px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 800;
+  }
+  
+  .form-control input {
+      border: 2px solid #cfbdbd;
+      border-radius: 10px;
+      display: block;
+      font-family: inherit;
+      font-size: 14px;
+      padding: 10px;
+      width: 100%;
+  }
+  
+  .form-control input:focus {
+      outline: 0;
+      border-color: rgb(4, 196, 68);
+  }
+  
+  .form-control.success input {
+      border-color: #2ecc71;
+  }
+  
+  .form-control.error input {
+      border-color: #e74c3c;
+  }
+  
+  .form-control i {
+      visibility: hidden;
+      position: absolute;
+      top: 45px;
+      right: 10px;
+  }
+  
+  .form-control.success i.fa-check-circle {
+      color: #2ecc71;
+      visibility: visible;
+  }
+  
+  .form-control.error i.fa-exclamation-circle {
+      color: #e74c3c;
+      visibility: visible;
+      
+  }
+  
+  .form-control small {
+      color: #fc0000;
+      position: absolute;
+      font-size: 12px;
+      bottom: 0;
+      left: 10px;
+      visibility: hidden;
+  }
+  
+  .form-control.error small {
+      visibility: visible;
+  }
+  
+  .form button {
+      background-color: #041d8b;
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      display: block;
+      font-family: inherit;
+      font-size: 16px;
+      padding: 10px;
+      margin-top: 20px;
+      width: 100%;
+      font-weight: 500;
+  }
+  .form button:hover{
+    background: rgb(4, 81, 83);
+  }
+  
+  p{
+    text-align: center;
+      font-size: 15px;
+      color: black;
+      font-weight: 600;
+  }
+  .link{
+    text-decoration: none;
+    color: #041d8b;
+    font-weight: 800;
+      font-size: 20px;
+  }
+  .link:hover{
+    color: rgb(4, 81, 83)!important;
+  }
+  @media(min-width:768){
+    .container{
+      margin: auto;
+      width: 500px;
+      margin-top: 150px;
+      border:20px ;
+    }
+  }
+  
+  
