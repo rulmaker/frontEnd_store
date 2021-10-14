@@ -1,4 +1,4 @@
-let arrayProductos = [];//almacena elementos que seran guardados en loca
+let arrayProductos = [];//almacena elementos que seran guardados en localStorage
 
 class Product {
     constructor(name, image, description, talla, price,) {
@@ -129,11 +129,6 @@ const guardarDB = () => {
 
 }
 
-function showID() {
-    const numero = document.getElementsByClassName('mb-4').id;
-    const num = JSON.parse(localStorage.getItem('productos'));
-
-}
 
 //pintar solo el ultimo elemento de DB
 const agregarDB = () => {
@@ -207,37 +202,36 @@ const pintarDB = () => {
 
 
 //DOM EVENTS
-document.getElementById('product-form')
-    .addEventListener('submit', function (e) {
-        const name = document.getElementById('name').value;
-        const image = document.getElementById('image').value;
-        const description = document.getElementById('description').value;
-        const talla = document.getElementById('talla').value;
-        const price = document.getElementById('price').value;
+document.getElementById('product-form').addEventListener('submit', function (e) {
+    const name = document.getElementById('name').value;
+    const image = document.getElementById('image').value;
+    const description = document.getElementById('description').value;
+    const talla = document.getElementById('talla').value;
+    const price = document.getElementById('price').value;
 
 
-        const product = new Product(name, image, description, talla, price);
+    const product = new Product(name, image, description, talla, price);
 
-        const ui = new UI();
+    const ui = new UI();
 
-        if (name === "" || price === "" || image === "" || description === "" || talla === "") {
-            return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
-        }
+    if (name === "" || price === "" || image === "" || description === "" || talla === "") {
+        return ui.showMessage('Complete all fields', 'danger'), e.preventDefault();
+    }
 
-        /* ui.addProduct(product); */
+    /* ui.addProduct(product); */
 
-        ui.crearItem(product);
+    ui.crearItem(product);
 
-        guardarDB();
+    guardarDB();
 
-        agregarDB();
+    agregarDB();
 
-        ui.resetForm();
+    ui.resetForm();
 
-        ui.showMessage('Product added successfully', 'success');
+    ui.showMessage('Product added successfully', 'success');
 
-        e.preventDefault();
-    });
+    e.preventDefault();
+});
 
 document.getElementById('list-items').addEventListener('click', function (e) {
     const ui = new UI();
