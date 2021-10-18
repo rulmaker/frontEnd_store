@@ -26,7 +26,18 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
 }
-p {
+/* p {
+  text-align: justify;
+  margin-top: 100px;
+  margin-bottom:100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Libre Franklin', sans-serif;
+  color: white;
+} */
+
+/*TEXTO EN LA PÁGINA (La configuración del texto la puse por separado para que no haya problemas. Mejor darle a cada párrafo una configuración específica.)*/
+.Introducción{
   text-align: justify;
   margin-top: 100px;
   margin-bottom:100px;
@@ -37,13 +48,17 @@ p {
 }
 .descripcion{
   text-align: justify;
+  margin-bottom:100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Libre Franklin', sans-serif;
   color:white;
 }
 a {
   text-decoration: none;
 }
-img {
-  width: 100%;
+img{
+  width:100%
 }
 .contenedor {
   max-width: 120rem;
@@ -70,10 +85,10 @@ h4 {
 }
 h6{
   color:white;
+  text-shadow: gray;
   background-attachment: fixed;
   background-color: #5d2e46;
   text-align: justify;
-  margin-top: 100px;
   margin-bottom:100px;
   margin-left: 20px;
   margin-right: 20px;
@@ -342,9 +357,12 @@ footer{
   background-color: var(--primarioOscuro);
   padding: 20px;
   margin-top: 100px;
+  display:flex;
   justify-content: center;
   align-items: center;
   position:relative bottom;
+  color:white;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 
@@ -377,6 +395,7 @@ form div.btn-enviar{
   max-width: 500px;
   height: 50%;
   margin:20px;
+  margin-bottom: 100px;
   display: grid;
   grid-gap:60px;
   grid-template-columns: repeat(2, 1fr);
@@ -396,22 +415,24 @@ background-color: #5d2e46;
   grid-column: 1/-1;
 }
 }
-.nuestraEmpresa{
-  width: 90%;
-  height: 90%;
-  margin-bottom: 200px;
+.nuestraEmpresa{  
+  margin-bottom: 100px;
   display: grid;
   grid-gap:20px;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(1, auto);
 }
 .nuestraEmpresa .nuestraEmpresaImagen{
-  display:flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 5%;
+
 }
-.nuestraEmpresa .descripcion{
-  color:white;
+@media screen and (min-width:1075px){
+.descripcion{
+  align-items: center;
+}
+.nuestraEmpresaImagen{
+  align-items: center;
+}
 }
 @media screen and (max-width:1075px){
   .descripcion{
